@@ -3,6 +3,6 @@
 
 namespace degree
 {
-	enum degreeProgram { SECURITY, NETWORK, SOFTWARE};
+	enum degreeProgram { SECURITY, NETWORK, SOFTWARE };
 
 }
