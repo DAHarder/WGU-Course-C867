@@ -4,4 +4,5 @@
 namespace degree
 {
 	enum degreeProgram { SECURITY, NETWORK, SOFTWARE };
+  
 }
