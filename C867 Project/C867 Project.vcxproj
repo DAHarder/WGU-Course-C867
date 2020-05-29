@@ -18,23 +18,9 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="degree.h" />
-    <ClInclude Include="roster.h" />
-    <ClInclude Include="student.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="roster.cpp" />
-    <ClCompile Include="student.cpp" />
-    <ClCompile Include="test.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="README.md" />
-  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{8227E8C0-A832-49EF-9921-18B22CA6B734}</ProjectGuid>
+    <ProjectGuid>{5E02D51C-1DF4-4BBA-895A-C956D25B154D}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>C867Project</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
@@ -160,6 +146,20 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="roster.cpp" />
+    <ClCompile Include="student.cpp" />
+    <ClCompile Include="testMain.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="degree.h" />
+    <ClInclude Include="roster.h" />
+    <ClInclude Include="student.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="README.md" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
