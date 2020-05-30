@@ -4,18 +4,27 @@
 #include <array>
 class student
 {
-	int studentID;
-	std::string firstName;
-	std::string lastName;
-	std::string email;
 	int age;
+	std::string studentID, firstName, lastName, email, degreeProgram;
 	std::array<int, 3> daysToComplete;
-	std::string degreeProgram;
 
 public:
 	//accessor function
+
 	//mutator function
+
 	//contructor function
+	student()
+	{
+		studentID = "";
+		firstName = "";
+		lastName = "";
+		email = "";
+		//degreeProgram = "";
+		age = 0;
+		daysToComplete = {};
+	}
 	//print function
+
 };
 
