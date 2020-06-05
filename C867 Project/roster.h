@@ -1,5 +1,9 @@
+//file roster.h
 #pragma once
-class roster
-{
-};
+
+
+	class roster
+	{
+
+	};
 

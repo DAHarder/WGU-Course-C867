@@ -1,9 +1,6 @@
-#pragma once
 //File: degree.h
-#include <string>
+#pragma once
 
-namespace degree
-{
-	enum degreeProgram { SECURITY, NETWORK, SOFTWARE };
-	std::string degreeProgramStrings[] = { "Security", "Network", "Software" };
-}
+
+	enum class degreeProgram { SECURITY, NETWORK, SOFTWARE, NONE };
+	std::string degreeProgramStrings[] = { "Security", "Network", "Software", "None" };

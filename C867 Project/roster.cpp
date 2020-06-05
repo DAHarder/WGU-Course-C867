@@ -1,1 +1,7 @@
-#include "roster.h"
+using namespace std;
+
+
+	class roster
+	{
+
+	};
