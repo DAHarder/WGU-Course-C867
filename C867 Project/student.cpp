@@ -1,20 +1,42 @@
-
+#include <iostream>
+#include <string>
+#include <vector>
 
 using namespace std;
-class student
-{
-	
-	int age = 0;
-	//std::string studentID, firstName, lastName, email;
-	//std::array<int, 3> daysToComplete;
 
-public:
-	//accessor function
+#include "student.h"
 
-	//mutator function
+	//accessor function definitions
+	string student::getStudentID() const {
+		return studentID;
+	}
+	vector<int> student::getdaysToComplete() const {
+		return daysToComplete;
+	}
 
-	//contructor function
+	//mutator function definitions
+	void student::setStudentID(string studentID) {
+		this->studentID = studentID;
+	}
+	void student::setFirstName(string firstName) {
+		this->firstName = firstName;
+	}
+	void student::setLastName(string lastName) {
+		this->lastName = lastName;
+	}
+	void student::setEmailAddress(string email) {
+		this->email = email;
+	}
+	void student::setAge(int age) {
+		this->age = age;
+	}
+	void student::setDegreeProgram(int degreeProgram) {
+		this->degreeProgram = degreeProgram;
+	}
+	void student::setdaysToComplete(vector<int> daysToComplete) {
+		this->daysToComplete = daysToComplete;
+	}
+	//contructor function definition
 
-	//print function
+	//print function definition
 
-};

@@ -1,12 +1,13 @@
 #include <iostream>
 #include <string>
-#include <array>
-#include "student.h"
-#include "degree.h"
-#include "roster.h"
-
+#include <vector>
 
 using namespace std;
+
+#include "degree.h"
+#include "roster.h"
+#include "student.h"
+
 
 int main()
 {
@@ -17,10 +18,20 @@ int main()
         "A4,Erin,Black,Erin.black@comcast.net,22,50,58,40,SECURITY",
         "A5,Dan,Adams,DanAdamsHarder@Outlook.com,34, 21, 32, 44,SOFTWARE" };
 
-    degreeProgram potato = degreeProgram::SOFTWARE;
-    cout << "Hello World!" << endl;
-    cout << degreeProgramStrings[(int)potato] << endl;
-    cout << studentData[0] << endl;
+    student student1;
+
+    student1.setStudentID("potato10");
+
+    vector<int> daysToCompleteVar{ 34, 21, 32, 44 };
+    student1.setdaysToComplete(daysToCompleteVar);
+
+    cout << "student ID: " << student1.getStudentID() << endl;
+    
+    for (int i = 0; i < daysToCompleteVar.size(); ++i) {
+        cout << "Days to complete: " << student1.getdaysToComplete()[i] << endl;
+    }
+
+
 
     return 0;
 }
