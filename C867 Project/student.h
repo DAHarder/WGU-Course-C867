@@ -1,35 +1,50 @@
-//file student.0
+//file student.h
 #pragma once
 
+#define RESET   "\033[0m"   // Reset color
+#define BOLDBLUE    "\033[1m\033[34m"      // Bold Blue
+enum class printItemEnum { STUDENTID, FIRSTNAME, LASTNAME, EMAIL, AGE, DEGREEPROGRAM, DAYSTOCOMPLETE, ALL };
 
 	class student
 	{
 	private:
-		int age, degreeProgram;
+		int age;
+		degreeProgramEnum degreeProgram;
 		string studentID, firstName, lastName, email;
 		vector<int> daysToComplete;
 
 	public:
 		//accessor functions
 		string getStudentID() const;
-		string getFirstName() const; //FIXME Define me
-		string getLastName() const; //FIXME Define me
-		string getEmailAddress() const; //FIXME Define me
-		int getAge() const; //FIXME Define me
-		int getDegreeProgram() const; //FIXME Define me
-		vector<int> getdaysToComplete() const; //FIXME Define me
+		string getFirstName() const; 
+		string getLastName() const; 
+		string getEmailAddress() const; 
+		int getAge() const; 
+		degreeProgramEnum getDegreeProgram() const;
+		vector<int> getdaysToComplete() const; 
 
 		//mutator functions
 		void setStudentID(string studentID);
-		void setFirstName(string firstName); //FIXME Define me
-		void setLastName(string lastName); //FIXME Define me
-		void setEmailAddress(string email); //FIXME Define me
-		void setAge(int age); //FIXME Define me
-		void setDegreeProgram(int degreeProgram); //FIXME Define me
-		void setdaysToComplete(vector<int> daysToComplete); //FIXME Define me
+		void setFirstName(string firstName);
+		void setLastName(string lastName);
+		void setEmailAddress(string email);
+		void setAge(int age);
+		void setDegreeProgram(degreeProgramEnum degreeProgram);
+		void setdaysToComplete(vector<int> daysToComplete);
 
 		//contructor function
+		student(
+			string StudentID = "NEW",
+			string firstName = "NEW",
+			string lastName = "NEW",
+			string email = "NEW",
+			int age = 0,
+			vector<int> daysToComplete = { 0, 0, 0, 0 },
+			degreeProgramEnum degreeProgram = degreeProgramEnum::NONE);
 
 		//print function
+		void print(printItemEnum printItem) const;
 
+		//destructor function
+		~student();
 	};

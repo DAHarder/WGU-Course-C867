@@ -2,5 +2,4 @@
 #pragma once
 
 
-	enum class degreeProgram { SECURITY, NETWORK, SOFTWARE, NONE };
-	std::string degreeProgramStrings[] = { "Security", "Network", "Software", "None" };
+	enum class degreeProgramEnum { SECURITY=0, NETWORK=1, SOFTWARE=2, NONE=3 };

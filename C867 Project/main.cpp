@@ -5,9 +5,8 @@
 using namespace std;
 
 #include "degree.h"
-#include "roster.h"
 #include "student.h"
-
+#include "roster.h"
 
 int main()
 {
@@ -18,9 +17,11 @@ int main()
         "A4,Erin,Black,Erin.black@comcast.net,22,50,58,40,SECURITY",
         "A5,Dan,Adams,DanAdamsHarder@Outlook.com,34, 21, 32, 44,SOFTWARE" };
 
-    student student1;
 
-    student1.setStudentID("potato10");
+    student student1("POT", "DOOM", "AAAH", "lord@here.com", 25, { 1, 2, 3, 4 }, degreeProgramEnum::SECURITY);
+
+/*
+    student1.setStudentID();
 
     vector<int> daysToCompleteVar{ 34, 21, 32, 44 };
     student1.setdaysToComplete(daysToCompleteVar);
@@ -29,9 +30,10 @@ int main()
     
     for (int i = 0; i < daysToCompleteVar.size(); ++i) {
         cout << "Days to complete: " << student1.getdaysToComplete()[i] << endl;
-    }
+    }*/
 
 
+   student1.print(printItemEnum::ALL);
 
     return 0;
 }
