@@ -5,7 +5,7 @@
 	class roster
 	{
 	private:
-		vector<student> classRosterArray;
+		vector<student*> classRosterArray;
 	public:
 		//mutator functions
 		void add(string studentID,
@@ -20,7 +20,7 @@
 		void remove(string studentID);
 
 		//print functions
-		void printAll();
+		void printAll() const;
 		void printAverageDaysInCourse(string studentID);
 		void printByDegreeProgram(degreeProgramEnum degreeProgram);
 		void printInvalidEmails();

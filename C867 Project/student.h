@@ -2,8 +2,11 @@
 #pragma once
 
 #define RESET   "\033[0m"   // Reset color
-#define BOLDBLUE    "\033[1m\033[34m"      // Bold Blue
+#define BOLDBLUE    "\033[1m\033[34m"      // Bold Blue color
+#define RED "\x1B[31m" // Red color
+
 enum class printItemEnum { STUDENTID, FIRSTNAME, LASTNAME, EMAIL, AGE, DEGREEPROGRAM, DAYSTOCOMPLETE, ALL };
+static const string degreeProgramStrings[] = { "Security", "Network", "Software", "None" };
 
 	class student
 	{

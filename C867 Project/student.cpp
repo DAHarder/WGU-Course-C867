@@ -8,7 +8,7 @@ using namespace std;
 #include "degree.h"
 #include "student.h"
 
-static const string degreeProgramStrings[] = { "Security", "Network", "Software", "None" };
+//static const string degreeProgramStrings[] = { "Security", "Network", "Software", "None" };
 
 	//accessor function definitions
 	string student::getStudentID() const {
@@ -110,12 +110,12 @@ static const string degreeProgramStrings[] = { "Security", "Network", "Software"
 			cout << BOLDBLUE << "Program: " << RESET << degreeProgramStrings[(int)degreeProgram] << endl;
 			break;
 		case printItemEnum::ALL:
-			cout << BOLDBLUE << "StudentID: " << RESET << studentID << "   ";
-			cout << BOLDBLUE << "First Name: " << RESET << firstName << "   ";
-			cout << BOLDBLUE << "Last Name: " << RESET << lastName << "   ";
-			cout << BOLDBLUE << "Email: " << RESET << email << "   ";
-			cout << BOLDBLUE << "Age: " << RESET << age << "   ";
-			cout << BOLDBLUE << "Days In Course: " << RESET;
+			cout << setw(10) << BOLDBLUE << "StudentID: " << RESET << setw(8) << left << studentID;
+			cout << setw(10) << BOLDBLUE << "First Name: " << RESET << setw(12) << firstName;
+			cout << setw(10) << BOLDBLUE << "Last Name: " << RESET << setw(12) << lastName;
+			cout << setw(10) << BOLDBLUE << "Email: " << RESET << setw(20) << email;
+			cout << setw(10) << BOLDBLUE << "Age: " << RESET << setw(8) << age;
+			cout << setw(10) << BOLDBLUE << "Days In Course: " << RESET;
 			cout << "{ ";
 			for (size_t i = 0; i < daysToComplete.size(); i++)
 			{
@@ -124,7 +124,7 @@ static const string degreeProgramStrings[] = { "Security", "Network", "Software"
 					cout << ", ";
 				}
 			}
-			cout << " }" << "   ";
+			cout << " }\t";
 
 			cout << BOLDBLUE << "Program: " << RESET << degreeProgramStrings[(int)degreeProgram] << endl;
 			break;
