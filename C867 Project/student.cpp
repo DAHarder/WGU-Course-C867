@@ -8,8 +8,6 @@ using namespace std;
 #include "degree.h"
 #include "student.h"
 
-//static const string degreeProgramStrings[] = { "Security", "Network", "Software", "None" };
-
 	//accessor function definitions
 	string student::getStudentID() const {
 		return studentID;
@@ -110,11 +108,11 @@ using namespace std;
 			cout << BOLDBLUE << "Program: " << RESET << degreeProgramStrings[(int)degreeProgram] << endl;
 			break;
 		case printItemEnum::ALL:
-			cout << setw(10) << BOLDBLUE << "StudentID: " << RESET << setw(8) << left << studentID;
-			cout << setw(10) << BOLDBLUE << "First Name: " << RESET << setw(12) << firstName;
-			cout << setw(10) << BOLDBLUE << "Last Name: " << RESET << setw(12) << lastName;
-			cout << setw(10) << BOLDBLUE << "Email: " << RESET << setw(20) << email;
-			cout << setw(10) << BOLDBLUE << "Age: " << RESET << setw(8) << age;
+			cout << setw(10) << BOLDBLUE << "StudentID: " << RESET << setw(6) << left << studentID;
+			cout << setw(10) << BOLDBLUE << "First Name: " << RESET << setw(10) << firstName;
+			cout << setw(10) << BOLDBLUE << "Last Name: " << RESET << setw(10) << lastName;
+			cout << setw(10) << BOLDBLUE << "Email: " << RESET << setw(30) << email;
+			cout << setw(10) << BOLDBLUE << "Age: " << RESET << setw(6) << age;
 			cout << setw(10) << BOLDBLUE << "Days In Course: " << RESET;
 			cout << "{ ";
 			for (size_t i = 0; i < daysToComplete.size(); i++)
@@ -135,5 +133,5 @@ using namespace std;
 
 	//Destructor function
 	student::~student() {
-
+		cout << GREEN << "Backend Info: Student Destructor called" << RESET << endl;
 	}

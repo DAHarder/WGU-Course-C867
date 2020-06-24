@@ -29,7 +29,7 @@ void roster::add(
 
 void roster::remove(string studentID) {
 	bool foundItem = false;
-	cout << "Attempting to delete " << RED << studentID << RESET << " from list" << endl;
+	cout << "--Attempting to delete student ID: " << RED << studentID << RESET << " from list--" << endl;
 	for (size_t i = 0; i < classRosterArray.size(); i++)
 	{
 		if (studentID == classRosterArray.at(i)->getStudentID()) {
@@ -40,14 +40,14 @@ void roster::remove(string studentID) {
 		}
 	}
 	if (!foundItem) {
-		cout << "  No students found with that ID" << endl;
+		cout << "  No students found with that ID" << endl << endl;
 	}
 }
 
 //print functions
 void roster::printAverageDaysInCourse(string studentID) {
 	bool foundItem = false;
-	float avgDaysResult = 0;
+	float avgDaysResult = 0.00;
 	cout << "The average days in course for student " << RED << studentID << RESET << " is: ";
 	for (size_t i = 0; i < classRosterArray.size(); i++) {
 		if (studentID == classRosterArray.at(i)->getStudentID()) {
@@ -55,12 +55,12 @@ void roster::printAverageDaysInCourse(string studentID) {
 			for (size_t i = 0; i < avgDaysVec.size(); i++) {
 				avgDaysResult = avgDaysResult + avgDaysVec.at(i);
 			}
-			cout << setprecision(4) << avgDaysResult / avgDaysVec.size() << endl << endl;
+			cout << setprecision(4) << avgDaysResult / avgDaysVec.size() << endl;
 			foundItem = true;
 		}
 	}
 	if (!foundItem) {
-		cout << RED << "Error" << RESET << " - No students found with that ID" << endl;
+		cout << RED << "Error" << RESET << " - No students found with that ID" << endl << endl;
 	}
 }
 
@@ -75,7 +75,7 @@ void roster::printAll() const {
 
 void roster::printByDegreeProgram(degreeProgramEnum degreeProgram) {
 	bool foundItem = false;
-	cout << "------------PRINTING ALL STUDENTS IN "<< RED << degreeProgramStrings[(int)degreeProgram] << RESET <<"------------ " << endl << endl;
+	cout << "-------PRINTING ALL STUDENTS IN "<< RED << degreeProgramStrings[(int)degreeProgram] << RESET <<"-------- " << endl << endl;
 	for (size_t i = 0; i < classRosterArray.size(); i++) {
 		if (degreeProgram == classRosterArray.at(i)->getDegreeProgram()) {
 			classRosterArray.at(i)->print(printItemEnum::ALL);
@@ -90,6 +90,7 @@ void roster::printByDegreeProgram(degreeProgramEnum degreeProgram) {
 
 void roster::printInvalidEmails() {
 	bool foundItem = false;
+	cout << "------------PRINTING INVALID EMAILS------------" << endl << endl;
 	for (size_t i = 0; i < classRosterArray.size(); i++) {
 		const regex emailPattern("(\\w+)(\\.|_)?(\\w*)@(\\w+)(\\.(\\w+))+");
 		if (!regex_match(classRosterArray.at(i)->getEmailAddress(), emailPattern)) {
@@ -101,6 +102,7 @@ void roster::printInvalidEmails() {
 	if (!foundItem) {
 		cout << "No invalid email addresses found" << endl;
 	}
+	cout << endl;
 }
 
 //contructor function
@@ -108,7 +110,20 @@ roster::roster() {
 	return;
 }
 
+//copy contructor function
+roster::roster(const roster& origRoster) {
+	cout << GREEN << "Backend Info: copy contructor called" << RESET << endl << endl;
+	for (size_t i = 0; i < origRoster.classRosterArray.size(); i++) {
+		classRosterArray.push_back(new student(*origRoster.classRosterArray.at(i)));
+	}
+	return;
+}
+
 //Destructor function
 roster::~roster() {
-
+	cout << GREEN << "Backend Info: roster destructor called" << RESET << endl << endl;
+	for (size_t i = 0; i < classRosterArray.size(); i++) {
+		delete classRosterArray.at(i);
+	}
+return;
 }

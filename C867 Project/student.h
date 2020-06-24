@@ -4,8 +4,12 @@
 #define RESET   "\033[0m"   // Reset color
 #define BOLDBLUE    "\033[1m\033[34m"      // Bold Blue color
 #define RED "\x1B[31m" // Red color
+#define GREEN "\x1B[92m" // light Red color
 
+//Below Enum Class allows the Student print function to print individual items for each Student
 enum class printItemEnum { STUDENTID, FIRSTNAME, LASTNAME, EMAIL, AGE, DEGREEPROGRAM, DAYSTOCOMPLETE, ALL };
+
+//Below array allows translation from the degreeProgram Enum to a string output
 static const string degreeProgramStrings[] = { "Security", "Network", "Software", "None" };
 
 	class student

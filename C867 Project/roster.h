@@ -1,12 +1,10 @@
 //file roster.h
 #pragma once
 
-
 	class roster
 	{
-	private:
-		vector<student*> classRosterArray;
 	public:
+		vector<student*> classRosterArray;
 		//mutator functions
 		void add(string studentID,
 			string firstName,
@@ -30,5 +28,8 @@
 
 		//destructor function
 		~roster();
+
+		//copy contructor -- for use with inputStudentData function
+		roster(const roster& origRoster);
 	};
 
